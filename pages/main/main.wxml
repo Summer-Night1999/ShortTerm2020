@@ -1,0 +1,25 @@
+<!--pages/main/main.wxml-->
+<view>
+  <cover-image class="img" src="../../image/ShangMengWeiXiu.jpg"/>
+</view>
+<view class="layout_horizontal">
+  <view style="flex:1">
+    <view class="center">{{time}}日</view>
+     <view class="center">{{weekday}}</view>
+  </view>
+  <view style="flex:1">
+    <text class="center">{{business}}单</text>
+  </view>
+</view>
+<scroll-view scroll-y="true" style='height:500rpx'>
+  
+  <!-- 手指按下后1s样式由a改变为d，手指松开后2s样式由d改变回a  -->
+  <view class='a size'>a</view>
+  <view class='b size'>b</view>
+  <view class='c size'>c</view>
+  <view class='d size'>d</view>
+  <view class='e size'>e</view>
+</scroll-view>
+<view class="center">
+  hello
+</view>

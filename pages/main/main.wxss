@@ -1,0 +1,71 @@
+/* pages/main/main.wxss */
+/*横向布局  */
+.layout_horizontal{
+  height: 100rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  
+}
+.center{
+  height: 50rpx;
+  display: flex;
+  /*row 横向  column 列表  居中*/
+  align-items: center;
+  justify-content: center; 
+  font-size: 50rpx;
+  color: blue;
+}
+/*纵向布局  */
+.layout_vertical{
+  height: 100rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+
+/*划线  */
+.line {
+   background-color: blue;
+   height: 2rpx;
+   width: 100%;
+}
+.container{
+  display: flex;
+
+}
+
+.size{
+  width: 100%;
+  height: 150rpx;
+}
+
+.a{
+  background: red;
+  order:1;
+  flex:10;
+}
+
+.b{
+  background: yellow;
+  order:2;
+  flex:2;
+}
+
+.c{
+  background: blue;
+  order:3;
+  flex:1;
+}
+
+.d{
+  background: green;
+  order:4;
+  flex:1;
+}
+
+.e{
+  background: orange;
+  order:5;
+  flex:1;
+}
