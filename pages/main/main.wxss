@@ -1,29 +1,86 @@
 /* pages/main/main.wxss */
+scroll-view{
+  border-bottom: 1px solid #BDBDBD;
+}
 /*横向布局  */
 .layout_horizontal{
   height: 100rpx;
   display: flex;
   /*row 横向  column 列表  */
   flex-direction: row;
-  
+  align-items: center;
+}
+.NavImg{
+  align-self: center;
+  width: 700rpx;
+  height: 300rpx;
+  margin-left: 25rpx;
 }
 .center{
-  height: 50rpx;
+margin-left: 20rpx;
   display: flex;
-  /*row 横向  column 列表  居中*/
-  align-items: center;
+  /*row 横向  column 列表  */
+  flex-direction: row;
   justify-content: center; 
-  font-size: 50rpx;
+  font-size: 40rpx;
   color: blue;
 }
-/*纵向布局  */
-.layout_vertical{
-  height: 100rpx;
+.LinkButton{
+  align-items: center;
   display: flex;
   /*row 横向  column 列表  */
   flex-direction: column;
 }
+.LinkButton image{
+  width: 80rpx;
+  height: 100rpx;
+}
+.LinkButton text{
+  height: 100%;
+  font-size: medium;
+}
+/*纵向布局  */
+.layout_vertical{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.Button_horizontal{
+  height: 200rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.HorButton{
+  margin-top: 10rpx;
+  /* height: 150rpx; */
+  align-items: center;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
 
+}
+.HorButton image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.HorButton text{
+  width: 100%;
+  height: 100%;
+  font-size: medium;
+}
+.DataTab{
+  height: 80rpx;
+  font-size: 40rpx;
+  font-weight: 300;
+  background-color: #BBDEF8;
+}
+.DataTab image{
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
 /*划线  */
 .line {
    background-color: blue;
@@ -41,31 +98,30 @@
 }
 
 .a{
-  background: red;
   order:1;
   flex:10;
 }
 
 .b{
-  background: yellow;
+  
   order:2;
   flex:2;
 }
 
 .c{
-  background: blue;
+ 
   order:3;
   flex:1;
 }
 
 .d{
-  background: green;
+  
   order:4;
   flex:1;
 }
 
 .e{
-  background: orange;
+ 
   order:5;
   flex:1;
 }

@@ -1,25 +1,58 @@
 <!--pages/main/main.wxml-->
-<view>
+<view class="NavImg">
   <cover-image class="img" src="../../image/ShangMengWeiXiu.jpg"/>
 </view>
 <view class="layout_horizontal">
   <view style="flex:1">
-    <view class="center">{{time}}日</view>
-     <view class="center">{{weekday}}</view>
+    <view class="center">{{time}}日{{weekday}}   </view>
   </view>
   <view style="flex:1">
-    <text class="center">{{business}}单</text>
+    <view class="center">{{business}}单</view>
   </view>
 </view>
-<scroll-view scroll-y="true" style='height:500rpx'>
-  
+<view class="Button_horizontal">
+ <view style="flex:1">
+  <button class="HorButton" style="width:250rpx">
+    <image src="../../assests/order_unread.png"></image>
+    <text>待受理</text>
+  </button>
+ </view>
+ <view style="flex:1">
+  <button class="HorButton" style="width:250rpx">
+    <image src="../../assests/repairing_icon.jpg"></image>
+    <text>维修中</text>
+  </button>
+ </view>
+ <view style="flex:1">
+  <button class="HorButton" style="width:250rpx">
+    <image src="../../assests/eva.png"></image>
+    <text>已评价</text>
+  </button>
+ </view>
+</view>
+<view class="DataTab">
+  <image src="../../assests/timg.png"></image>
+  最近维修
+</view>
+<scroll-view scroll-y="true" style='height:350rpx'>
   <!-- 手指按下后1s样式由a改变为d，手指松开后2s样式由d改变回a  -->
-  <view class='a size'>a</view>
+  <view class='a size'>这里存放查询最近的订单完成信息</view>
   <view class='b size'>b</view>
   <view class='c size'>c</view>
   <view class='d size'>d</view>
   <view class='e size'>e</view>
 </scroll-view>
 <view class="center">
-  hello
+   <button class="LinkButton" style="width:250rpx">
+    <image src="../../assests/Home.png"></image>
+    <text>首页</text>
+  </button>
+   <button class="LinkButton" style="width:250rpx">
+    <image src="../../assests/order.png"></image>
+    <text>订单</text>
+  </button>
+   <button class="LinkButton" style="width:250rpx">
+    <image src="../../assests/my.png"></image>
+    <text>我的</text>
+  </button>
 </view>
