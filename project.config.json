@@ -83,6 +83,27 @@
 					"id": -1,
 					"name": "pages/index/index",
 					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/repairReturn/repairReturn",
+					"pathName": "pages/repairReturn/repairReturn",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/statusSearch/statusSearch",
+					"pathName": "pages/statusSearch/statusSearch",
 					"scene": null
 				}
 			]

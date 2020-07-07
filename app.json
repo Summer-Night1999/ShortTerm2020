@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/main/main",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/repairReturn/repairReturn",
+    "pages/statusSearch/statusSearch"
   ],
   "window": {
     "backgroundTextStyle": "light",
