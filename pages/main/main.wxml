@@ -4,7 +4,7 @@
 </view>
 <view class="layout_horizontal">
   <view style="flex:1">
-    <view class="center">{{time}}日{{weekday}}   </view>
+    <view class="center">{{time}}日{{weekday}}</view>
   </view>
   <view style="flex:1">
     <view class="center">{{business}}单</view>
@@ -42,7 +42,7 @@
   <view class='d size'>d</view>
   <view class='e size'>e</view>
 </scroll-view>
-<view class="center">
+<view class="layout_horizontal">
    <button class="LinkButton" style="width:250rpx">
     <image src="../../assests/Home.png"></image>
     <text>首页</text>

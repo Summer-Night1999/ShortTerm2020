@@ -5,7 +5,10 @@
     "pages/main/main",
     "pages/order/order",
     "pages/repairReturn/repairReturn",
-    "pages/statusSearch/statusSearch"
+    "pages/statusSearch/statusSearch",
+    "pages/addOrder/addOrder",
+    "pages/orderConfirm/OrderConfirm",
+    "pages/scene/scene"
   ],
   "window": {
     "backgroundTextStyle": "light",
