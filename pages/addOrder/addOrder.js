@@ -1,4 +1,7 @@
 // pages/addOrder/addOrder.js
+const DB = wx.cloud.database().collection("contact_list")
+var util = require('../../utils/util.js');
+
 Page({
 
   data: {
@@ -6,6 +9,10 @@ Page({
     focus: false,
     date: '2016-09-01',
     time: '12:01',
+    address:'',
+    name:"123",
+    number:"",
+    textarea:"",
     tempFilePaths: '' 
   },
   bindButtonTap: function() {
@@ -18,14 +25,15 @@ Page({
   },
   //表单提交确认
   bindFormSubmit: function(e) {
-    console.log(e.detail.value.textarea)
+    this.textarea=e.detail.value.textarea,
+    console.log(this.textarea)
   },
   //日期选择器变化
   bindDateChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
+    console.log('picker发送选择改变，携带值为', this.data.date)
   },
   //时间选择器变化
   bindTimeChange: function(e) {
@@ -34,7 +42,7 @@ Page({
       time: e.detail.value
     })
   },
-  chooseimage: function () { 
+  chooseimage: function() { 
     var _this = this; 
     wx.chooseImage({ 
       count: 1, // 默认9 
@@ -47,6 +55,44 @@ Page({
         }) 
       } 
     }) 
-  } 
+  },
+  bindname:function(e){
+    this.setData({
+      name:e.detail.value
+    })
+  },
+  bindnumber:function(e){
+    this.setData({
+      number:e.detail.value
+    })
+  },
+  bindaddress:function(e){
+    this.setData({
+      address:e.detail.value
+    })
+  },
+    
+
+
+
+  confirm(){
+    DB.add({
+      data:{
+        address:this.data.address,
+        time:this.data.time,
+        date:this.data.date,
+        name:this.data.name,
+        textarea:this.textarea,
+        number:this.data.number
+      },
+      
+      success(res){
+        console.log("添加成功",res)
+      },
+      fail(res){
+        console.log("添加失败",res)
+      }
+    })
+  }
  
 })

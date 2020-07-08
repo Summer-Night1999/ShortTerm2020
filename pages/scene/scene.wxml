@@ -2,19 +2,11 @@
 <view class="layout_vertical">
   <view class="layout_horizontal" style="flex:1">
     <view class="layout_vertical" style="flex:1">
-     <view class="weui-cells__title">请输入联系人</view>
-     <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
-      
-      <view class="weui-cells weui-cells_after-title">
-        <checkbox-group bindchange="checkboxChange">
-          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="{{item.value}}">
-            <view class="weui-cell__hd">
-              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
-            </view>
-            <view class="weui-cell__bd">{{item.name}}</view>
-          </label>
-        </checkbox-group>
-      </view>
+     <view class="weui-cells__title">请输入维修人姓名</view>
+     <input class="weui-input" bindinput="bindname" />
+     <view class="weui-cells__title">请输入故障原因</view>
+     <input class="weui-input" bindinput="bindreason" />
+     
     </view>
     
     <view style="flex:1">
@@ -42,7 +34,7 @@
       </picker>
     </view>
     <view>
-      <button>确定</button>
+      <button bindtap="confirm">确定</button>
     </view>
   </view>
 </view>

@@ -3,9 +3,9 @@
   <view class="layout_horizontal" style="flex:1">
     <view class="layout_vertical" style="flex:1">
      <view class="weui-cells__title">请输入维修人姓名</view>
-     <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+     <input class="weui-input" bindinput="bindname"/>
      <view class="weui-cells__title">请输入联系电话</view>
-     <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+     <input class="weui-input" bindinput="bindnumber"/>
     </view>
     
   </view>
@@ -29,7 +29,7 @@
       </picker>
     </view>
     <view>
-      <button>确定</button>
+      <button bindtap="confirm">确定</button>
     </view>
   </view>
 </view>

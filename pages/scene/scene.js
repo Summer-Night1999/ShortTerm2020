@@ -1,4 +1,7 @@
 // pages/addOrder/addOrder.js
+const DB = wx.cloud.database().collection("scene_list")
+var util = require('../../utils/util.js');
+
 Page({
 
   data: {
@@ -6,12 +9,19 @@ Page({
     focus: false,
     date: '2016-09-01',
     time: '12:01',
-    tempFilePaths: '' ,
-    items: [
-      {value: 'USA', name: '原因1'},
-      {value: 'CHN', name: '原因2', checked: 'true'},
-      {value: 'BRA', name: '原因3'}
-    ]
+    reason:"",
+    name:"",
+    tempFilePaths: ''
+  },
+  bindname:function(e){
+    this.setData({
+      name:e.detail.value
+    })
+  },
+  bindreason:function(e){
+    this.setData({
+      reason:e.detail.value
+    })
   },
   bindButtonTap: function() {
     this.setData({
@@ -23,7 +33,8 @@ Page({
   },
   //表单提交确认
   bindFormSubmit: function(e) {
-    console.log(e.detail.value.textarea)
+    this.textarea=e.detail.value.textarea,
+    console.log(this.textarea)
   },
   //日期选择器变化
   bindDateChange: function(e) {
@@ -71,6 +82,24 @@ Page({
 
     this.setData({
       items
+    })
+  },
+  confirm(){
+    DB.add({
+      data:{
+        time:this.data.time,
+        date:this.data.date,
+        name:this.data.name,
+        textarea:this.textarea,
+        reason:this.data.reason
+      },
+      
+      success(res){
+        console.log("添加成功",res)
+      },
+      fail(res){
+        console.log("添加失败",res)
+      }
     })
   }
  

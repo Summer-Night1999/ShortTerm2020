@@ -3,11 +3,12 @@
   <view class="layout_horizontal" style="flex:1">
     <view class="layout_vertical" style="flex:1">
      <view class="weui-cells__title">请输入联系人</view>
-     <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+     <input class="weui-input" bindinput="bindname"/>
+     <view>{{name}}</view>
      <view class="weui-cells__title">请输入联系电话</view>
-     <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+     <input class="weui-input" bindinput="bindnumber"/>
      <view class="weui-cells__title">请输入地址</view>
-     <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+     <input class="weui-input" bindinput="bindaddress"/>
     </view>
     <view style="flex:1">
         <button style="margin:30rpx;" bindtap="chooseimage">获取图片</button> 
@@ -34,7 +35,7 @@
       </picker>
     </view>
     <view>
-      <button>确定</button>
+      <button bindtap="confirm">确定</button>
     </view>
   </view>
 </view>
