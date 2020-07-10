@@ -113,5 +113,12 @@ Page({
       })
     }
   },
+  toRepairReturn:function(event){
+    let value= event.currentTarget.dataset.value
+    console.log(value)
+    wx.navigateTo({
+      url: '../repairReturn/repairReturn?id=' + value,
+    })
+  }
   
 })

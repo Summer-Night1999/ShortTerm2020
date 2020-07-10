@@ -12,19 +12,19 @@
 </view>
 <view class="Button_horizontal">
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx">
+  <button class="HorButton" style="width:250rpx" bindtap="toAddOrder">
     <image src="../../assests/order_unread.png"></image>
-    <text>待受理</text>
+    <text>故障上报</text>
   </button>
  </view>
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx">
+  <button class="HorButton" style="width:250rpx" bindtap="toOrderConfirm">
     <image src="../../assests/repairing_icon.jpg"></image>
-    <text>维修中</text>
+    <text>确认派单</text>
   </button>
  </view>
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx">
+  <button class="HorButton" style="width:250rpx" bindtap="toRepairReturn">
     <image src="../../assests/eva.png"></image>
     <text>已评价</text>
   </button>
@@ -47,9 +47,9 @@
     <image src="../../assests/Home.png"></image>
     <text>首页</text>
   </button>
-   <button class="LinkButton" style="width:250rpx">
+   <button class="LinkButton" style="width:250rpx" bindtap="toStatusSearch">
     <image src="../../assests/order.png"></image>
-    <text>订单</text>
+    <text>故障查询</text>
   </button>
    <button class="LinkButton" style="width:250rpx">
     <image src="../../assests/my.png"></image>

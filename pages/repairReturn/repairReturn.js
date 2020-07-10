@@ -1,3 +1,4 @@
+
 Page({
   data: {
     winWidth: 0,
@@ -6,9 +7,20 @@ Page({
     result:[],
     result1:[],
     result2:[],
-    data:[1,2,3]
+    data:[1,2,3],
+    orderid:123,
+    test:111,
   },
-  onLoad:function(){
+  onLoad:function(options){
+    
+    //如何接收数据（从17到21行）
+    var that=this;
+    that.setData({
+      orderid:options.id,
+    })
+    console.log(that.data.orderid)
+
+
     if(this.data.currentTab===0){
       let date=new Date();
       let date1=new Date(date.getTime()-24*60*60*1000);

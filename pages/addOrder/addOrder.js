@@ -52,7 +52,8 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片 
         _this.setData({ 
           tempFilePaths:res.tempFilePaths 
-        }) 
+        })
+        console.log();
       } 
     }) 
   },
@@ -85,9 +86,9 @@ Page({
         textarea:this.textarea,
         number:this.data.number
       },
-      
       success(res){
-        console.log("添加成功",res)
+        console.log("添加成功",res),
+        console.log(this.address)
       },
       fail(res){
         console.log("添加失败",res)

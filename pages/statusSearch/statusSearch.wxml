@@ -15,12 +15,14 @@
     <view class="attributeitem">客户</view>
     <view class="attributeitem">修理人员</view>
     <view class="attributeitem">当前状态</view>
+    <view class="attributeitem">操作</view>
   </view>
     <view wx:for="{{result}}" wx:key="item" wx:for-item="item" class="swiperitem">
       <view class="resultitem">{{item.orderid}}</view>
       <view class="resultitem">{{item.userId}}</view>
       <view class="resultitem">{{item.repairId}}</view>
       <view class="resultitem">{{item.repairStatus}}</view>
+      <button style="width:22%" bindtap="toRepairReturn" data-value="{{item.orderid}}">操作</button>
     </view>
   </view>
   </swiper-item>

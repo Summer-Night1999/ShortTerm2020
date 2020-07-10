@@ -51,5 +51,25 @@ Page({
         console.log("添加失败",res)
       }
     })
+  },
+  toAddOrder:function(e){
+    wx.navigateTo({
+      url: '../addOrder/addOrder',
+    })
+  },
+  toOrderConfirm:function(e){
+    wx.navigateTo({
+      url: '../orderConfirm/OrderConfirm',
+    })
+  },
+  toRepairReturn:function(e){
+    wx.navigateTo({
+      url: '../repairReturn/repairReturn',
+    })
+  },
+  toStatusSearch:function(e){
+    wx.navigateTo({
+      url: '../statusSearch/statusSearch',
+    })
   }
 })
