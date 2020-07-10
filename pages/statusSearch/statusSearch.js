@@ -7,37 +7,20 @@ Page({
     result:[],
     result1:[],
     result2:[],
-    data:[1,2,3]
+    userId:1,
   },
   onLoad:function(){
-    if(this.data.currentTab===0){
-      let date=new Date();
-      let date1=new Date(date.getTime()-24*60*60*1000);
-      let date2=new Date(date.getTime()-7*24*60*60*1000);
-      let year=date.getFullYear();
-      let month=date.getMonth()+1;
-      let day=date.getDate();
-      let year1=date1.getFullYear();
-      let month1=date1.getMonth()+1;
-      let day1=date1.getDate();
-      let year2=date2.getFullYear();
-      let month2=date2.getMonth()+1;
-      let day2=date2.getDate();
-      var time=year+'/'+month+'/'+day;
-      var time1=year1+'/'+month1+'/'+day1;
-      var time2=year2+'/'+month2+'/'+day2;
-      console.log(time2);
-      this.TodayonQuery(time);
-      this.YesterdayonQuery(time1)
-      this.WeekQuery(date,date2);
-    } 
+      this.FinishQuery();
+      this.StartingQuery()
+      this. unStartQuery();
   },
-  WeekQuery: function(_nowdate,_weekdate) {
+  unStartQuery: function() {
     const db = wx.cloud.database()
     const _ = db.command
     // 查询当前用户所有的 counters
-    db.collection('repairReturn_list').where({
-      returnTime: _.gte(_weekdate).and(_.lte(_nowdate))
+    db.collection('statusSearch_list').where({
+      userId:this.userId,
+      repairStatus:'未开始'
     }).get({
       success: res => {
         this.result2=res.data;
@@ -55,11 +38,12 @@ Page({
       }
     })
   },
-  YesterdayonQuery: function(_date) {
+  StartingQuery: function() {
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters
-    db.collection('repairReturn_list').where({
-      returnTime:_date
+    db.collection('statusSearch_list').where({
+      userId:this.userId,
+      repairStatus:'维修中'
     }).get({
       success: res => {
         this.result1=res.data;
@@ -77,11 +61,12 @@ Page({
       }
     })
   },
-  TodayonQuery: function(_date) {
+  FinishQuery: function() {
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters
-    db.collection('repairReturn_list').where({
-      returnTime:_date
+    db.collection('statusSearch_list').where({
+      userId:this.userId,
+      repairStatus:'已完成'
     }).get({
       success: res => {
         this.result=res.data;

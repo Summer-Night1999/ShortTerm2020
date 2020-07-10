@@ -14,9 +14,32 @@
 .menuButton button{
   font-size: smaller;
 }
+.attribute{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  border-top:1px solid gainsboro ;
+  border-bottom: 1px solid gainsboro;
+}
+.attributeitem{
+  width: 25%;
+  text-align: center;
+  border-right:1px solid gainsboro;
+}
 .swiper-box {
   display: block;
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+.swiperitem{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  border-bottom: 1px solid gainsboro;
+}
+.resultitem{
+  width: 25%;
+  text-align: center;
+  border-right:1px solid gainsboro;
 }

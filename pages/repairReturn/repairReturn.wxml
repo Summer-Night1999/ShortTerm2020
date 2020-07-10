@@ -10,20 +10,47 @@
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
   <swiper-item>
-    <view>
-     <text>a</text>
+  <view>
+  <view class="attribute">
+    <view class="attributeitem">订单编号</view>
+    <view class="attributeitem">回访形式</view>
+    <view class="attributeitem">回访时间</view>
+    <view class="attributeitem">回访分数</view>
+  </view>
+    <view wx:for="{{result}}" wx:key="item" wx:for-item="item" class="swiperitem">
+      <view class="resultitem">{{item.orderid}}</view>
+      <view class="resultitem">{{item.returnMethod}}</view>
+      <view class="resultitem">{{item.returnTime}}</view>
+      <view class="resultitem">{{item.satisfactionScore}}</view>
+    </view>
+  </view>
+  </swiper-item>
+
+  <swiper-item>
+  <view>
+    <view class="attribute">
+      <view class="attributeitem">订单编号</view>
+      <view class="attributeitem">回访形式</view>
+      <view class="attributeitem">回访时间</view>
+      <view class="attributeitem">回访分数</view>
+    </view>
+     <view wx:for="{{result1}}" wx:key="item" wx:for-item="item" class="swiperitem">
+      <view class="resultitem">{{item.orderid}}</view>
+      <view class="resultitem">{{item.returnMethod}}</view>
+      <view class="resultitem">{{item.returnTime}}</view>
+      <view class="resultitem">{{item.satisfactionScore}}</view>
+    </view>
     </view>
   </swiper-item>
 
   <swiper-item>
     <view>
-     <text>b</text>
+      <view class="attribute">
+      <view class="attributeitem">订单编号</view>
+      <view class="attributeitem">回访形式</view>
+      <view class="attributeitem">回访时间</view>
+      <view class="attributeitem">回访分数</view>
     </view>
-  </swiper-item>
-
-  <swiper-item>
-    <view>
-     <text>c</text>
     </view>
   </swiper-item>
   

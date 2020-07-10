@@ -8,7 +8,8 @@
     "pages/statusSearch/statusSearch",
     "pages/addOrder/addOrder",
     "pages/orderConfirm/OrderConfirm",
-    "pages/scene/scene"
+    "pages/scene/scene",
+    "pages/orderDetail/orderDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

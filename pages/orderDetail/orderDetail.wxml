@@ -1,0 +1,13 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<!--pages/order/order.wxml-->
+<view>
+  <button>上报故障</button>
+  <button>故障派单</button>
+  <button>现场维修回复</button>
+  <button>维修回访</button>
+  <button>我的工单</button>
+  <button>故障处理情况</button>
+</view>
+<view>
+  这里显示已经有的订单详情，上面执行操作
+</view>

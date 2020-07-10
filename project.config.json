@@ -21,15 +21,15 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"compileHotReLoad": false,
-		"useIsolateContext": true
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.3",
@@ -125,6 +125,34 @@
 					"id": -1,
 					"name": "pages/scene/scene",
 					"pathName": "pages/scene/scene",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/main/main",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/statusSearch/statusSearch",
+					"pathName": "pages/statusSearch/statusSearch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderDetail/orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
 					"scene": null
 				}
 			]

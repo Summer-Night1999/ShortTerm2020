@@ -1,26 +1,26 @@
 <!--pages/statusSearch/statusSearch.wxml-->
 <view class="Nav" style="width:100%">
-    <text>故障回访情况</text>
+    <text>故障处理情况查询</text>
 </view>
 <view class="menuButton">
-    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">今天</button>
-    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">昨天</button>
-    <button class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">一周内</button>
+    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">已完成</button>
+    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">维修中</button>
+    <button class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">未开始</button>
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
   <swiper-item>
   <view>
   <view class="attribute">
     <view class="attributeitem">订单编号</view>
-    <view class="attributeitem">回访形式</view>
-    <view class="attributeitem">回访时间</view>
-    <view class="attributeitem">回访分数</view>
+    <view class="attributeitem">客户</view>
+    <view class="attributeitem">修理人员</view>
+    <view class="attributeitem">当前状态</view>
   </view>
     <view wx:for="{{result}}" wx:key="item" wx:for-item="item" class="swiperitem">
       <view class="resultitem">{{item.orderid}}</view>
-      <view class="resultitem">{{item.returnMethod}}</view>
-      <view class="resultitem">{{item.returnTime}}</view>
-      <view class="resultitem">{{item.satisfactionScore}}</view>
+      <view class="resultitem">{{item.userId}}</view>
+      <view class="resultitem">{{item.repairId}}</view>
+      <view class="resultitem">{{item.repairStatus}}</view>
     </view>
   </view>
   </swiper-item>
@@ -34,10 +34,10 @@
       <view class="attributeitem">回访分数</view>
     </view>
      <view wx:for="{{result1}}" wx:key="item" wx:for-item="item" class="swiperitem">
-      <view class="resultitem">{{item.orderid}}</view>
-      <view class="resultitem">{{item.returnMethod}}</view>
-      <view class="resultitem">{{item.returnTime}}</view>
-      <view class="resultitem">{{item.satisfactionScore}}</view>
+     <view class="resultitem">{{item.orderid}}</view>
+      <view class="resultitem">{{item.userId}}</view>
+      <view class="resultitem">{{item.repairId}}</view>
+      <view class="resultitem">{{item.repairStatus}}</view>
     </view>
     </view>
   </swiper-item>
@@ -49,6 +49,12 @@
       <view class="attributeitem">回访形式</view>
       <view class="attributeitem">回访时间</view>
       <view class="attributeitem">回访分数</view>
+    </view>
+    <view wx:for="{{result2}}" wx:key="item" wx:for-item="item" class="swiperitem">
+     <view class="resultitem">{{item.orderid}}</view>
+      <view class="resultitem">{{item.userId}}</view>
+      <view class="resultitem">{{item.repairId}}</view>
+      <view class="resultitem">{{item.repairStatus}}</view>
     </view>
     </view>
   </swiper-item>
