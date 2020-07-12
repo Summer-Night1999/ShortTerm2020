@@ -1,5 +1,5 @@
 // pages/addOrder/addOrder.js
-const DB = wx.cloud.database().collection("contact_list")
+const DB = wx.cloud.database().collection("order_list")
 var util = require('../../utils/util.js');
 
 Page({
@@ -7,25 +7,40 @@ Page({
   data: {
     height: 20,
     focus: false,
-    date: '2016-09-01',
-    time: '12:01',
+    date: '',
+    time: '',
     address:'',
-    name:"123",
+    name:"",
     number:"",
-    textarea:"",
-    tempFilePaths: '' 
+    errorDesc:'',
+    tempFilePaths: '',
+    result:[]
+  },
+  onLoad(){
+    DB.orderBy('orderid','desc').get({
+      success: res => {
+        this.result=res.data;
+        this.setData({
+          result: this.result
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
   },
   bindButtonTap: function() {
     this.setData({
       focus: true
     })
   },
-  bindTextAreaBlur: function(e) {
-    console.log(e.detail.value)
-  },
-  //表单提交确认
+  //表单提交确认s
   bindFormSubmit: function(e) {
-    this.textarea=e.detail.value.textarea,
+    this.textarea=e.detail.value,
     console.log(this.textarea)
   },
   //日期选择器变化
@@ -72,28 +87,37 @@ Page({
       address:e.detail.value
     })
   },
-    
+  bindTextArea: function(e) {
+    this.errorDesc=e.detail.value;
+    this.setData({
+      errorDesc: e.detail.value
+    })
+  }, 
 
 
 
   confirm(){
+    console.log(this.errorDesc)
     DB.add({
       data:{
+        orderid:this.result[0].orderid+1,
         address:this.data.address,
-        time:this.data.time,
-        date:this.data.date,
-        name:this.data.name,
-        textarea:this.textarea,
-        number:this.data.number
+        Date:this.data.date+' '+this.data.time,
+        userId:this.data.name,
+        errorDesc:this.errorDesc,
+        Tel:this.data.number,
+        orderStatus:'未接单'
       },
       success(res){
-        console.log("添加成功",res),
-        console.log(this.address)
+        console.log("添加成功",res)
       },
       fail(res){
         console.log("添加失败",res)
       }
     })
+    wx.navigateBack({
+        delta: 0,
+      })
   }
  
 })

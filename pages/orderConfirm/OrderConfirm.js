@@ -1,5 +1,6 @@
 const DB = wx.cloud.database().collection("sceneOrderConfirm_list")
 const db = wx.cloud.database().collection("longRangeOrderConfirm_list")
+const database=wx.cloud.database().collection("order_list")
 var util = require('../../utils/util.js');
 
 Page({
@@ -15,10 +16,12 @@ Page({
     name:"",
     number:"",
     textarea:"",
-    result:'',
+    Result:'',
     resultDesc:'',
     scenerepair:true,
     result:[],
+    result1:[],
+    orderid:0,
   },
   onReady: function() {
     var that = this;
@@ -97,7 +100,7 @@ Page({
   },
   bindResult:function(e){
     this.setData({
-      result:e.detail.value
+      Result:e.detail.value
     })
   },
   bindresultDesc:function(e){
@@ -105,32 +108,71 @@ Page({
       resultDesc:e.detail.value
     })
   },
-  onLoad(){
-    DB.orderBy('orderid','desc').get({
-      success: res => {
-        this.result=res.data;
-        console.log(res)
-        this.setData({
-          result: this.result
-        })
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '查询记录失败'
-        })
-        console.error('[数据库] [查询记录] 失败：', err)
-      }
+  onLoad:function(options){
+    var that=this;
+    that.setData({
+      orderid:options.orderid
     })
+    console.log(that.data.orderid)
+    // db.orderBy('orderid','desc').get({
+    //   success: res => {
+    //     this.result1=res.data;
+    //     if(res.data.length==0){
+    //       this.result1[0].orderid=0;
+    //     }
+    //     console.log(res)
+    //     this.setData({
+    //       result1: this.result1
+    //     })
+    //   },
+    //   fail: err => {
+    //     wx.showToast({
+    //       icon: 'none',
+    //       title: '查询记录失败'
+    //     })
+    //     console.error('[数据库] [查询记录] 失败：', err)
+    //   }
+    // });
+    // DB.orderBy('orderid','desc').get({
+    //   success: res => {
+    //     this.result=res.data;
+    //     console.log(res)
+    //     this.setData({
+    //       result: this.result
+    //     })
+    //   },
+    //   fail: err => {
+    //     wx.showToast({
+    //       icon: 'none',
+    //       title: '查询记录失败'
+    //     })
+    //     console.error('[数据库] [查询记录] 失败：', err)
+    //   }
+    // })
   },
   confirm1(){
-
+    db.add({
+      data:{
+          orderid:parseInt(this.data.orderid),
+          repairid:this.data.name,
+          repairResult:this.data.Result,
+          repairResultDesc:this.data.resultDesc
+      },
+      success(res){
+        console.log("添加成功",res)
+      },
+      fail(res){
+        console.log("添加失败",res)
+      }
+    })
+    wx.navigateBack({
+      delta: 0,
+    })
   },
   confirm(){
-      console.log('结果为：'+this.result[0].orderid);
       DB.add({
         data:{
-            orderid:this.result[0].orderid+1,
+            orderid:parseInt(this.data.orderid),
             repairid:this.data.name,
             userTel:this.data.number,
             appointmentDate:this.data.date+this.data.time
@@ -141,6 +183,23 @@ Page({
         fail(res){
           console.log("添加失败",res)
         }
+      })
+      database.doc(this.data.orderid).update({
+        data: {
+          orderStatus:'已接单'
+        },
+        success: res => {
+          this.setData({
+            orderStatus:'已接单'
+          })
+        },
+        fail: err => {
+          icon: 'none',
+          console.error('[数据库] [更新记录] 失败：', err)
+        }
+      })
+      wx.navigateBack({
+        delta: 0,
       })
     // DB.add({
     //   data:{

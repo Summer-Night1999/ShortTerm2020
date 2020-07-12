@@ -57,9 +57,9 @@ Page({
       url: '../addOrder/addOrder',
     })
   },
-  toOrderConfirm:function(e){
+  toOrder:function(e){
     wx.navigateTo({
-      url: '../orderConfirm/OrderConfirm',
+      url: '../order/order',
     })
   },
   toRepairReturn:function(e){

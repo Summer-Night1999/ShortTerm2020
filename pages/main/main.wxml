@@ -18,7 +18,7 @@
   </button>
  </view>
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx" bindtap="toOrderConfirm">
+  <button class="HorButton" style="width:250rpx" bindtap="toOrder">
     <image src="../../assests/repairing_icon.jpg"></image>
     <text>确认派单</text>
   </button>

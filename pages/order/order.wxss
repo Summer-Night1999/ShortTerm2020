@@ -43,3 +43,8 @@
   text-align: center;
   border-right:1px solid gainsboro;
 }
+.resultitem1{
+  width: 20%;
+  text-align: center;
+  border-right:1px solid gainsboro;
+}
