@@ -34,12 +34,14 @@
       <view class="attributeitem">回访形式</view>
       <view class="attributeitem">回访时间</view>
       <view class="attributeitem">回访分数</view>
+      <view class="attributeitem">操作</view>
     </view>
      <view wx:for="{{result1}}" wx:key="item" wx:for-item="item" class="swiperitem">
      <view class="resultitem">{{item.orderid}}</view>
       <view class="resultitem">{{item.userId}}</view>
       <view class="resultitem">{{item.repairId}}</view>
       <view class="resultitem">{{item.repairStatus}}</view>
+       <button style="width:22%" bindtap="toRepairReturn" data-value="{{item.orderid}}">操作</button>
     </view>
     </view>
   </swiper-item>
@@ -51,12 +53,14 @@
       <view class="attributeitem">回访形式</view>
       <view class="attributeitem">回访时间</view>
       <view class="attributeitem">回访分数</view>
+      <view class="attributeitem">操作</view>
     </view>
     <view wx:for="{{result2}}" wx:key="item" wx:for-item="item" class="swiperitem">
      <view class="resultitem">{{item.orderid}}</view>
       <view class="resultitem">{{item.userId}}</view>
       <view class="resultitem">{{item.repairId}}</view>
       <view class="resultitem">{{item.repairStatus}}</view>
+       <button style="width:22%" bindtap="toRepairReturn" data-value="{{item.orderid}}">操作</button>
     </view>
     </view>
   </swiper-item>

@@ -9,6 +9,10 @@ Page({
     result2:[],
     userId:1,
   },
+  onReady: function () {
+    //获得popup组件
+    this.popup = this.selectComponent("#popup");
+  },
   onLoad:function(){
       this.FinishQuery();
       this.StartingQuery()

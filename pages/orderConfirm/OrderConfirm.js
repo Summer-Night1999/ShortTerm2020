@@ -1,10 +1,10 @@
 const DB = wx.cloud.database().collection("sceneOrderConfirm_list")
 const db = wx.cloud.database().collection("longRangeOrderConfirm_list")
-const database=wx.cloud.database().collection("order_list")
+const orderlist=wx.cloud.database().collection("order_list")
 var util = require('../../utils/util.js');
-
 Page({
 
+  
   data: {
     winWidth: 0,
     winHeight: 0,
@@ -184,20 +184,7 @@ Page({
           console.log("添加失败",res)
         }
       })
-      database.doc(this.data.orderid).update({
-        data: {
-          orderStatus:'已接单'
-        },
-        success: res => {
-          this.setData({
-            orderStatus:'已接单'
-          })
-        },
-        fail: err => {
-          icon: 'none',
-          console.error('[数据库] [更新记录] 失败：', err)
-        }
-      })
+     
       wx.navigateBack({
         delta: 0,
       })
@@ -217,5 +204,18 @@ Page({
     //     console.log("添加失败",res)
     //   }
     // })
+  },
+  change:function(){
+    console.log(this.data.orderid)
+   orderlist.where({
+      orderid:this.orderid,
+    }).update({
+      data:{
+        orderStatus:'已接单'
+      },
+      success(res) {
+        console.log(res)
+    }
+  })
   }
 })
