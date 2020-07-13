@@ -83,6 +83,8 @@ Page({
             orderid:this.result[0].orderid,
             repairid:this.result1[0].repairid,
             repairStatus:'未开始',
+            returnTime:'2020/7/13',
+            satisfactionScore:this.data.satisfactionScore,
             userId:this.result[0].userId
         },
         success(res){

@@ -1,5 +1,5 @@
 <!--pages/main/main.wxml-->
-<view class="NavImg">
+<view class="NavImg" style="width:100%">
   <cover-image class="img" src="../../image/ShangMengWeiXiu.jpg"/>
 </view>
 <view class="layout_horizontal">
@@ -12,19 +12,19 @@
 </view>
 <view class="Button_horizontal">
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx" bindtap="toAddOrder">
+  <button class="HorButton" style="width:250rpx;border:none" plain="true" bindtap="toAddOrder">
     <image src="../../assests/order_unread.png"></image>
     <text>故障上报</text>
   </button>
  </view>
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx" bindtap="toOrder">
+  <button class="HorButton" style="width:250rpx;border:none" plain="true" bindtap="toOrder">
     <image src="../../assests/repairing_icon.jpg"></image>
     <text>确认派单</text>
   </button>
  </view>
  <view style="flex:1">
-  <button class="HorButton" style="width:250rpx" bindtap="toRepairReturn">
+  <button class="HorButton" style="width:250rpx;border:none" plain="true" bindtap="toRepairReturn">
     <image src="../../assests/eva.png"></image>
     <text>已评价</text>
   </button>
@@ -37,21 +37,21 @@
 <scroll-view scroll-y="true" style='height:350rpx'>
   <!-- 手指按下后1s样式由a改变为d，手指松开后2s样式由d改变回a  -->
   <view class='a size'>这里存放查询最近的订单完成信息</view>
-  <view class='b size'>b</view>
-  <view class='c size'>c</view>
-  <view class='d size'>d</view>
-  <view class='e size'>e</view>
+  <view class='b size'>故障原因：电脑炸了         用户：戴一甲        已完成</view>
+  <view class='c size'>故障原因：电脑又炸了         用户：戴一甲        未完成</view>
+  <view class='d size'>故障原因：宽带618错误         用户：沈路通        维修中</view>
+  <view class='e size'>故障原因：宽带欠费         用户：戴一甲        未完成</view>
 </scroll-view>
 <view class="layout_horizontal">
-   <button class="LinkButton" style="width:250rpx">
+   <button class="LinkButton" style="width:250rpx;border:none" plain="true">
     <image src="../../assests/Home.png"></image>
     <text>首页</text>
   </button>
-   <button class="LinkButton" style="width:250rpx" bindtap="toStatusSearch">
+   <button class="LinkButton" style="width:250rpx;border:none" plain="true" bindtap="toStatusSearch">
     <image src="../../assests/order.png"></image>
     <text>故障查询</text>
   </button>
-   <button class="LinkButton" style="width:250rpx">
+   <button class="LinkButton" style="width:250rpx;border:none" plain="true">
     <image src="../../assests/my.png"></image>
     <text>我的</text>
   </button>

@@ -1,7 +1,7 @@
 <!--pages/addOrder/addOrder.wxml-->
-<view class="menuButton">
-    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">现场维修</button>
-    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">远程维修</button>
+<view class="layout_horizontal" style="flex-direction: row">
+    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" style="border:none" plain="true">现场维修</button>
+    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav" style="border:none" plain="true">远程维修</button>
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
   <swiper-item>
@@ -17,13 +17,13 @@
   </view>
   <view style="flex:5">
     <form bindsubmit="bindFormSubmit">
-     <textarea placeholder="form 中的 textarea" name="textarea"/>
-     <button form-type="submit"> 提交 </button>
+     <textarea placeholder="请输入维修信息" name="textarea"/>
+     <button form-type="submit" style="border:none" plain="true"> 提交 </button>
     </form>
   </view>
   <!-- <button bindtap="change">change</button> -->
-  <view style="flex:1"  class="layout_horizontal">
-    <view>
+  <view style="flex:3"  class="layout_horizontal">
+    <view  style="flex:1">
       <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
       <view class="picker">
         预约维修日期: {{date}}
@@ -35,8 +35,8 @@
       </view>
       </picker>
     </view>
-    <view>
-      <button bindtap="confirm">确定</button>
+    <view  style="flex:1">
+      <button style="width:30vw" type="primary" bindtap="confirm">确定</button>
     </view>
   </view>
 </view>
@@ -58,9 +58,9 @@
     </view>
     <view style="flex:5">
       <form bindsubmit="bindFormSubmit">
-      <textarea placeholder="form 中的 textarea" name="textarea"/>
-      <button form-type="submit"> 提交 </button>
-       <button bindtap="confirm1">确定</button>
+      <textarea placeholder="请输入维修信息" name="textarea"/>
+      <button style="border:none" plain="true" form-type="submit"> 提交 </button>
+       <button type="primary" bindtap="confirm1">确定</button>
       </form>
     </view>
     </view>

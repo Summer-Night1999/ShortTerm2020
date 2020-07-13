@@ -40,8 +40,10 @@ Page({
   },
   //表单提交确认s
   bindFormSubmit: function(e) {
-    this.textarea=e.detail.value,
-    console.log(this.textarea)
+    this.errorDesc=e.detail.value;
+    this.setData({
+      errorDesc: e.detail.value
+    })
   },
   //日期选择器变化
   bindDateChange: function(e) {

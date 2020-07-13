@@ -1,5 +1,6 @@
 <!--pages/addOrder/addOrder.wxml-->
 <view class="layout_vertical">
+
   <view class="layout_horizontal" style="flex:1">
     <view class="layout_vertical" style="flex:1">
      <view class="weui-cells__title">请输入联系人</view>
@@ -12,18 +13,18 @@
      <input class="weui-input" bindinput="bindTextArea"/>
     </view>
     <view style="flex:1">
-        <button style="margin:30rpx;" bindtap="chooseimage">获取图片</button> 
+        <button style="margin:30rpx;border:none" bindtap="chooseimage" plain="true">添加图片</button> 
         <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 100%; height: 450rpx"/> 
     </view>
   </view>
   <view style="flex:5">
     <form bindsubmit="bindFormSubmit">
-     <textarea placeholder="form 中的 textarea" name="textarea"/>
-     <button form-type="submit"> 提交 </button>
+     <textarea placeholder="请输入具体情况" name="textarea"/>
+     <button form-type="submit"  style="margin:30rpx;border:none" plain="true"> 提交 </button>
     </form>
   </view>
-  <view style="flex:1"  class="layout_horizontal">
-    <view>
+  <view style="flex:3"  class="layout_horizontal">
+    <view style="flex:1">
       <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
       <view class="picker">
         故障发生日期: {{date}}
@@ -35,8 +36,8 @@
       </view>
       </picker>
     </view>
-    <view>
-      <button bindtap="confirm">确定</button>
+    <view  style="flex:1">
+      <button style="width:30vw" type="primary" bindtap="confirm">确定</button>
     </view>
   </view>
 </view>

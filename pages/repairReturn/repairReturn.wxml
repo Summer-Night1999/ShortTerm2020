@@ -4,9 +4,9 @@
     <text>故障回访查询</text>
 </view>
 <view class="menuButton">
-    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">今天</button>
-    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">昨天</button>
-    <button class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">一周内</button>
+    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav"  style="margin:30rpx;border:none" plain="true">今天</button>
+    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav"  style="margin:30rpx;border:none" plain="true">昨天</button>
+    <button class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav"  style="margin:30rpx;border:none" plain="true">一周内</button>
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
   <swiper-item>

@@ -3,8 +3,8 @@
     <text>订单查询</text>
 </view>
 <view class="menuButton">
-    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">已接单</button>
-    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">未接单</button>
+    <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" style="margin:30rpx;border:none" plain="true">已接单</button>
+    <button class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav" style="margin:30rpx;border:none" plain="true">未接单</button>
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
   <swiper-item>
@@ -38,7 +38,7 @@
       <view class="resultitem1">{{item.userId}}</view>
       <view class="resultitem1">{{item.errorDesc}}</view>
       <view class="resultitem1">{{item.orderStatus}}</view>
-      <button style="width:20%" bindtap="toOrderConfirm" data-value="{{item.orderid}}">我要维修</button>
+      <button style="width:20%;border:none" plain="true" bindtap="toOrderConfirm" data-value="{{item.orderid}}">我要维修</button>
     </view>
     </view>
   </swiper-item>
