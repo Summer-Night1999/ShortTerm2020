@@ -21,7 +21,9 @@ Page({
     scenerepair:true,
     result:[],
     result1:[],
+    inner:[],
     orderid:0,
+    _openid:'otVT84md8XLNOIOKTQaXOEe8Dd-4'
   },
   onReady: function() {
     var that = this;
@@ -184,7 +186,16 @@ Page({
           console.log("添加失败",res)
         }
       })
-     
+    orderlist.where({
+        orderid:this.orderid,
+      }).update({
+        data:{
+          orderStatus:'已接单'
+        },
+        success(res) {
+          console.log(res)
+      }
+    })
       wx.navigateBack({
         delta: 0,
       })
@@ -205,17 +216,17 @@ Page({
     //   }
     // })
   },
-  change:function(){
-    console.log(this.data.orderid)
-   orderlist.where({
-      orderid:this.orderid,
-    }).update({
-      data:{
-        orderStatus:'已接单'
-      },
-      success(res) {
-        console.log(res)
-    }
-  })
-  }
+  // change:function(){
+  //   console.log(this.data.orderid)
+  //  orderlist.where({
+  //     orderid:this.orderid,
+  //   }).update({
+  //     data:{
+  //       orderStatus:'已接单'
+  //     },
+  //     success(res) {
+  //       console.log(res)
+  //   }
+  // })
+  // }
 })

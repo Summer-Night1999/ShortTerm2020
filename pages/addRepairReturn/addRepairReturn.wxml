@@ -1,0 +1,25 @@
+<!--pages/addRepairReturn/addRepairReturn.wxml-->
+<view class="Nav" style="width:100%">
+    <text>添加回单</text>
+</view>
+ <view class="layout_vertical">
+      <view class="layout_horizontal" style="flex:1">
+      <view class="layout_vertical" style="flex:1">
+      <view class="weui-cells__title">请输入您的评分</view>
+      <input class="weui-input" bindinput="bindScore"/>
+    </view>
+    
+  </view>
+  <view style="flex:5">
+    <form bindsubmit="bindFormSubmit">
+     <textarea placeholder="form 中的 textarea" name="textarea"/>
+     <button form-type="submit"> 提交 </button>
+    </form>
+  </view>
+  <!-- <button bindtap="change">change</button> -->
+  <view style="flex:1"  class="layout_horizontal">   
+    <view>
+      <button bindtap="confirm">确定</button>
+    </view>
+  </view>
+</view>

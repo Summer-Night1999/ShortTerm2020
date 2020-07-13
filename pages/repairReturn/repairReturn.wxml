@@ -1,7 +1,7 @@
 <!--pages/repairReturn/repairReturn.wxml-->
 <!-- 故障回访页面 -->
 <view class="Nav" style="width:100%">
-    <text>故障回访情况</text>
+    <text>故障回访查询</text>
 </view>
 <view class="menuButton">
     <button class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">今天</button>

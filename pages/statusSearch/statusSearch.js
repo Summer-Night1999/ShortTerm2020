@@ -123,6 +123,12 @@ Page({
     wx.navigateTo({
       url: '../repairReturn/repairReturn?id=' + value,
     })
+  },
+  toAddRepairReturn:function(event){
+    let value= event.currentTarget.dataset.value
+    console.log(value)
+    wx.navigateTo({
+      url: '../addRepairReturn/addRepairReturn?id=' + value,
+    })
   }
-  
 })

@@ -9,7 +9,8 @@
     "pages/addOrder/addOrder",
     "pages/orderConfirm/OrderConfirm",
     "pages/scene/scene",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/addRepairReturn/addRepairReturn"
   ],
   "window": {
     "backgroundTextStyle": "light",
